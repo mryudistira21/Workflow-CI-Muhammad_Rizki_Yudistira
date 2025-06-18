@@ -26,12 +26,12 @@ jobs:
       run: echo "MLFLOW_TRACKING_URI=file://$(pwd)/mlruns" >> $GITHUB_ENV
 
     - name: Run MLflow Project
-      working-directory: Workflow-CI/MLProject
+      working-directory: MLProject
       run: |
         mlflow run . --env-manager=local
 
     - name: Move artifacts
-      working-directory: Workflow-CI/MLProject
+      working-directory: MLProject
       run: |
         cp -v model.pkl ../../model.pkl
         cp -v confusion_matrix.png ../../confusion_matrix.png
