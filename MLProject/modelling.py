@@ -8,6 +8,8 @@ import seaborn as sns
 import joblib
 import json
 
+mlflow.sklearn.autolog()
+
 # Set experiment
 mlflow.set_experiment("adult-income-skilled")
 
@@ -18,6 +20,7 @@ X_test = pd.read_csv(os.path.join(base_path, "X_test.csv"))
 y_train = pd.read_csv(os.path.join(base_path, "y_train.csv"))
 y_test = pd.read_csv(os.path.join(base_path, "y_test.csv"))
 
+# Training model
 model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
 model.fit(X_train, y_train.values.ravel())
 
