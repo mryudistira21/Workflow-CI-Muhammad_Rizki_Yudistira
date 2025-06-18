@@ -27,36 +27,28 @@ jobs:
 
     - name: Run MLflow Project
       working-directory: MLProject
-      run: |
-        mlflow run . --env-manager=local
+      run: mlflow run . --env-manager=local
 
-    - name: Move artifacts to root directory
-      working-directory: MLProject
+    - name: Check output files in MLProject
       run: |
-        cp -v model.pkl ../../model.pkl
-        cp -v confusion_matrix.png ../../confusion_matrix.png
-        cp -v metrics.json ../../metrics.json
+        ls -lh MLProject/model.pkl
+        ls -lh MLProject/confusion_matrix.png
+        ls -lh MLProject/metrics.json
 
-    - name: Check output files
-      run: |
-        ls -lh model.pkl
-        ls -lh confusion_matrix.png
-        ls -lh metrics.json
-
-    - name: Upload model
+    - name: Upload model artifact
       uses: actions/upload-artifact@v4
       with:
         name: model
-        path: model.pkl
+        path: MLProject/model.pkl
 
     - name: Upload confusion matrix
       uses: actions/upload-artifact@v4
       with:
         name: confusion-matrix
-        path: confusion_matrix.png
+        path: MLProject/confusion_matrix.png
 
     - name: Upload metrics
       uses: actions/upload-artifact@v4
       with:
         name: metrics
-        path: metrics.json
+        path: MLProject/metrics.json
