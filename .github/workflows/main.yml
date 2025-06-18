@@ -30,12 +30,18 @@ jobs:
       run: |
         mlflow run . --env-manager=local
 
-    - name: Move artifacts
+    - name: Move artifacts to root directory
       working-directory: MLProject
       run: |
         cp -v model.pkl ../../model.pkl
         cp -v confusion_matrix.png ../../confusion_matrix.png
         cp -v metrics.json ../../metrics.json
+
+    - name: Check output files
+      run: |
+        ls -lh model.pkl
+        ls -lh confusion_matrix.png
+        ls -lh metrics.json
 
     - name: Upload model
       uses: actions/upload-artifact@v4
