@@ -9,10 +9,10 @@ import seaborn as sns
 import joblib
 import json
 
-# Aktifkan autolog (biar auto log param dan metric)
+# Aktifkan autolog
 mlflow.sklearn.autolog()
 
-# Set experiment (boleh, tapi tidak wajib di sini)
+# Set experiment
 mlflow.set_experiment("adult-income-skilled")
 
 # Load dataset
