@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/GL65%20RTX2070/Jupyter/SMSML_Muhammad-Rizki-Yudistira/Workflow-CI/mlruns/0/4f4f365e0e9143b99fc66c76ff88efa8/artifacts
+end_time: 1750056769042
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4f4f365e0e9143b99fc66c76ff88efa8
+run_name: nebulous-fly-893
+run_uuid: 4f4f365e0e9143b99fc66c76ff88efa8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750056758323
+status: 4
+tags: []
+user_id: GL65 RTX2070

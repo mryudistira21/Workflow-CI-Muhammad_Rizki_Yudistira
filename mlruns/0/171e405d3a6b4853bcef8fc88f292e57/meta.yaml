@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/GL65%20RTX2070/Jupyter/SMSML_Muhammad-Rizki-Yudistira/Workflow-CI/mlruns/0/171e405d3a6b4853bcef8fc88f292e57/artifacts
+end_time: 1750058544339
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 171e405d3a6b4853bcef8fc88f292e57
+run_name: abundant-moose-690
+run_uuid: 171e405d3a6b4853bcef8fc88f292e57
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750058524328
+status: 4
+tags: []
+user_id: GL65 RTX2070

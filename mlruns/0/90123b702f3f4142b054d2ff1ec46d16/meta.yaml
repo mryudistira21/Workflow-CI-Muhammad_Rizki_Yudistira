@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/GL65%20RTX2070/Jupyter/SMSML_Muhammad-Rizki-Yudistira/Workflow-CI/mlruns/0/90123b702f3f4142b054d2ff1ec46d16/artifacts
+end_time: 1750048512198
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 90123b702f3f4142b054d2ff1ec46d16
+run_name: painted-goat-27
+run_uuid: 90123b702f3f4142b054d2ff1ec46d16
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750048508009
+status: 4
+tags: []
+user_id: GL65 RTX2070

@@ -1,0 +1,56 @@
+name: CI MLflow Skilled
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12.7'
+
+    - name: Install dependencies
+      run: |
+        pip install mlflow scikit-learn pandas matplotlib seaborn joblib
+
+    - name: Set MLflow tracking URI
+      run: echo "MLFLOW_TRACKING_URI=file://$(pwd)/mlruns" >> $GITHUB_ENV
+
+    - name: Run MLflow Project
+      working-directory: Workflow-CI/MLProject
+      run: |
+        mlflow run . --env-manager=local
+
+    - name: Move artifacts
+      working-directory: Workflow-CI/MLProject
+      run: |
+        cp -v model.pkl ../../model.pkl
+        cp -v confusion_matrix.png ../../confusion_matrix.png
+        cp -v metrics.json ../../metrics.json
+
+    - name: Upload model
+      uses: actions/upload-artifact@v4
+      with:
+        name: model
+        path: model.pkl
+
+    - name: Upload confusion matrix
+      uses: actions/upload-artifact@v4
+      with:
+        name: confusion-matrix
+        path: confusion_matrix.png
+
+    - name: Upload metrics
+      uses: actions/upload-artifact@v4
+      with:
+        name: metrics
+        path: metrics.json
